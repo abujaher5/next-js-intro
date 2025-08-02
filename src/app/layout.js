@@ -29,7 +29,7 @@ export default function RootLayout({ children }) {
             <li>Service</li>
           </ul>
         </nav>
-        {children}
+        <div className="min-h-screen">{children}</div>
         <footer>
           <p className="text-center">
             All right reserved to Creators of NextHero
