@@ -1,24 +1,15 @@
-import Link from "next/link";
 import React from "react";
 
-const BlogsPage = () => {
-  return (
-    <div className="p-24">
-      <h2 className="text-center mb-4">This is out Blogs page..</h2>
+const BlogDetails = ({ params }) => {
+  console.log(params.slug);
 
-      <div className="space-y-3 ">
-        {blogs.map((blog) => (
-          <div
-            key={blog.slug}
-            className="border-2 p-12 rounded-lg shadow-lg text-center space-y-4"
-          >
-            <h3 className="text-2xl  ">{blog.title}</h3>
-            <h3>{blog.description}</h3>
-            <button className="p-2 mt-2 bg-blue-500 rounded-md hover:text-green-500 ">
-              <Link href={`/blogs/${blog.slug}`}>View Details</Link>
-            </button>
-          </div>
-        ))}
+  const { title, description } = blogs.find((blog) => blog.slug == params.slug);
+  return (
+    <div className="p-10">
+      <h2>This page is for blog Details...</h2>
+      <div>
+        <h3>{title}</h3>
+        <h3>{description}</h3>
       </div>
     </div>
   );
@@ -57,4 +48,4 @@ const blogs = [
   },
 ];
 
-export default BlogsPage;
+export default BlogDetails;

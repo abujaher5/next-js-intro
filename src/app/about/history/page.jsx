@@ -9,7 +9,7 @@ const HistoryPage = () => {
         className="border rounded-md px-2 font-semibold"
         href={"/about/history/vision"}
       >
-        History
+        Vision
       </Link>
     </div>
   );
